@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './components/header/header.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   exports: [
     HeaderComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    LogoComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
     ReactiveFormsModule,
     RouterModule,
     HeaderComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    LogoComponent
   ]
 })
 export class SharedModule { }
