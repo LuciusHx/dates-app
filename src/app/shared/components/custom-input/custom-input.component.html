@@ -1,3 +1,12 @@
-<p>
-  custom-input works!
-</p>
+<ion-item class="ion-margin-vertical">
+  <ion-icon *ngIf="icon" [name]="icon"></ion-icon>
+  <ion-input 
+    [autocomplete]="autocomplete" 
+    [type]="type" 
+    [label]="label" 
+    labelPlacement="floating"
+    [errorText]="errorText"
+    ngModel
+    email
+    ></ion-input>
+</ion-item>

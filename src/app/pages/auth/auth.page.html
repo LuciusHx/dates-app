@@ -1,3 +1,11 @@
 <ion-content [fullscreen]="true">
   <app-header [title]="'Dates To-Do'"></app-header>
+
+  <div class="content">
+    <form [formGroup]="form">
+      <app-custom-input type="email" label="Email" errorText="Email inválido">
+        
+      </app-custom-input>
+    </form>
+  </div>
 </ion-content>

@@ -6,13 +6,11 @@ import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './components/header/header.component';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
-import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   exports: [
     HeaderComponent,
     CustomInputComponent,
-    LogoComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +20,6 @@ import { LogoComponent } from './components/logo/logo.component';
     RouterModule,
     HeaderComponent,
     CustomInputComponent,
-    LogoComponent
   ]
 })
 export class SharedModule { }
