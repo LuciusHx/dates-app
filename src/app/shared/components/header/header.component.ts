@@ -17,5 +17,13 @@ export class HeaderComponent {
   @Input() color: string; //atribuir uma cor ao cabecalho
   @Input() centerTitle: boolean;
 
+  // Exponha o observable para o template
+  darkMode$ = this.changeThemeService.darkMode$;
+
   constructor(public changeThemeService: ChangeThemeService) {}
+
+  // Método para alternar tema
+  toggleTheme() {
+    this.changeThemeService.toggleTheme();
+  }
 }

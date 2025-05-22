@@ -6,27 +6,21 @@
         <ion-icon slot="start" name="close-circle-outline"></ion-icon>
       </ion-button>
 
-      <!-- -- botao de voltar --  -->
+      <!-- botão de voltar -->
       <ion-back-button defaultHref="backButton"></ion-back-button>
     </ion-buttons>
 
-    <ion-title *ngIf="title" ngClass="{'ion-text-center': centerTitle}">{{
-      title
-    }}</ion-title>
-    <!-- botoes de mudar tema  -->
-    <ion-buttons slot="end">
-      <ion-button
-        (click)="changeThemeService.setTheme(false)"
-        *ngIf="changeThemeService.darkMode"
-      >
-        <ion-icon name="sunny"></ion-icon>
-      </ion-button>
+    <ion-title *ngIf="title" [class.ion-text-center]="centerTitle">
+      {{ title }}
+    </ion-title>
 
-      <ion-button
-        (click)="changeThemeService.setTheme(true)"
-        *ngIf="!changeThemeService.darkMode"
-      >
-        <ion-icon name="moon"></ion-icon>
+    <!-- botões de mudar tema -->
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleTheme()">
+        <ion-icon 
+          [name]="(darkMode$ | async) ? 'sunny' : 'moon'" 
+          slot="icon-only">
+        </ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
