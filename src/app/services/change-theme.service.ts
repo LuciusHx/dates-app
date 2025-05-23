@@ -19,8 +19,8 @@ export class ChangeThemeService {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
     const initialMode = savedTheme
-      //parse transforma string para booleano
-      ? JSON.parse(savedTheme)
+      ? //parse transforma string para booleano
+        JSON.parse(savedTheme)
       : prefersDark.matches;
     this.setTheme(initialMode);
 

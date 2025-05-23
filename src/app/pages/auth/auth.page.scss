@@ -1,0 +1,19 @@
+ion-card {
+    display: flex;
+    justify-content: center;
+}
+
+ion-text {
+    padding-left: 1rem;
+}
+
+.botao {
+    padding: 1rem 0;
+}
+
+@media (min-width: 769px){
+    form {
+        width: 500px;
+        padding: 50px 10px;
+    }
+}

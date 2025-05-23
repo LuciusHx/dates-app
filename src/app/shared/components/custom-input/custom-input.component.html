@@ -1,12 +1,18 @@
 <ion-item class="ion-margin-vertical">
-  <ion-icon *ngIf="icon" [name]="icon"></ion-icon>
-  <ion-input 
-    [autocomplete]="autocomplete" 
-    [type]="type" 
-    [label]="label" 
-    labelPlacement="floating"
-    [errorText]="errorText"
-    ngModel
-    email
-    ></ion-input>
+  <ion-icon *ngIf="icon" [name]="icon" class="ion-padding-end"></ion-icon>
+  <div>
+
+    <ion-input
+      debounce="300"
+      [formControl]="control"
+      [autocomplete]="autocomplete"
+      [type]="type"
+      labelPlacement="floating"
+    >
+      <ion-input-password-toggle
+        *ngIf="isPassword"
+        slot="end"
+      ></ion-input-password-toggle>
+    </ion-input>
+  </div>
 </ion-item>

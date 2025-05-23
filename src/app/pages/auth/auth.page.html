@@ -1,11 +1,54 @@
 <ion-content [fullscreen]="true">
-  <app-header [title]="'Dates To-Do'"></app-header>
+  <app-header [title]="'Login'"></app-header>
 
   <div class="content">
-    <form [formGroup]="form">
-      <app-custom-input type="email" label="Email" errorText="Email inválido">
-        
-      </app-custom-input>
-    </form>
+    <ion-card>
+      <form>
+        <app-custom-input
+          [control]="form.controls.email"
+          type="email"
+          icon="mail-outline"
+        ></app-custom-input>
+        <ion-text
+          color="danger"
+          *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched"
+        >
+          Esse campo é obrigatório!
+        </ion-text>
+        <ion-text
+          color="danger"
+          *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched"
+        >
+          Insira um Email válido!
+        </ion-text>
+
+        <app-custom-input
+          [control]="form.controls.password"
+          type="password"
+          icon="lock-closed-outline"
+        ></app-custom-input>
+        <ion-text
+          color="danger"
+          *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched"
+        >
+          Esse campo é obrigatório!
+        </ion-text>
+        <ion-text
+          color="danger"
+          *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched"
+        >
+          A senha deve ter pelo menos 8 caracteres
+        </ion-text>
+
+        <ion-button
+          [disabled]="form.invalid"
+          type="submit"
+          expand="block"
+          class="botao"
+        >
+          ENTRAR
+        </ion-button>
+      </form>
+    </ion-card>
   </div>
 </ion-content>
